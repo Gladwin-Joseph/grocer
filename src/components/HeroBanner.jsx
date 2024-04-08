@@ -1,22 +1,35 @@
 import React from "react";
-import { Box, Stack, Typography, Button } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import HeroBannerImage from "../assets/images/veggie_1.jpg";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const HeroBanner = () => {
+  const { isAuthenticated, user } = useAuth0();
   return (
     <Box
-      sx={{ mt: { lg: "160px", xs: "70px" }, ml: { sm: "50px" } }}
+      sx={{ mt: { lg: "150px", xs: "70px" }, ml: { sm: "50px" } }}
       position="relative"
       p="20px"
     >
-      <Typography
-        color="#3E4B3C"
-        fontWeight="600"
-        fontSize="26px"
-        fontFamily="'Raleway', sans-serif"
-      >
-        GROCER
-      </Typography>
+      {isAuthenticated ? (
+        <Typography
+          color="#3E4B3C"
+          fontWeight="600"
+          fontSize="26px"
+          fontFamily="'Raleway', sans-serif"
+        >
+          Welcome {user.name} to Grocer
+        </Typography>
+      ) : (
+        <Typography
+          color="#3E4B3C"
+          fontWeight="600"
+          fontSize="30px"
+          fontFamily="'Raleway', sans-serif"
+        >
+          Grocer
+        </Typography>
+      )}
       <Typography
         fontWeight={700}
         sx={{ fontSize: { lg: "44px", xs: "40px" } }}
@@ -48,7 +61,7 @@ const HeroBanner = () => {
         sx={{
           opacity: 0.1,
           display: { lg: "block", xs: "none" },
-          padding: "10px",
+          padding: "10px"
         }}
         fontSize="200px"
       >

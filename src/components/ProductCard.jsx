@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Button, Stack, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 
 const ProductCard = ({ product }) => {
   return (

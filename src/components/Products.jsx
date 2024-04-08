@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 import ProductCard from "./ProductCard";
-const Products = ({ products, setProducts }) => {
+const Products = ({ products }) => {
   return (
     <Box id="products" sx={{ mt: { lg: "110px" } }} mt="50px" p="20px">
       <Typography variant="h4" mb="46px" fontFamily="'Raleway', sans-serif">
